@@ -44,11 +44,11 @@ let amies =  React.createClass ({
         //console.log('componentWidth is :' + componentWidth);
         return (
             <View style={styles.container}>
-                <TextInput onChangeText = {(newText)=>this.updateNum(newText)} style={styles.numberInputStyle} placeholder={'请输入手机号'} />
+                <TextInput onChangeText = {this.updateNum} style={styles.numberInputStyle} placeholder={'请输入手机号'} />
                 <Text style={styles.textPromptStyle}>
                     您输入的手机号:{this.state.inputedNum}
                 </Text>
-                <TextInput onChangeText = {(newText)=>this.updatePW(newText)} style={styles.passwordInputStyle} placeholder={'请输入密码'} />
+                <TextInput onChangeText = {this.updatePW} style={styles.passwordInputStyle} placeholder={'请输入密码'} />
                 <Text style={styles.bigTextPrompt}>
                 确定         
                 </Text>
