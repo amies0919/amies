@@ -20,23 +20,11 @@ let amies =  React.createClass ({
             inputedPW:''
         };       
     },
-    updateNum: function(newText){
-        this.setState(
-        (state)=>{
-            return {
-                inputedNum:newText,
-            }
-        }
-        );
+    updateNum: function(inputedNum){
+        this.setState({inputedNum});
     },
-    updatePW: function(newText){
-        this.setState(
-            ()=>{
-                return{
-                inputedPW:newText,
-                }
-            }
-        );
+    updatePW: function(inputedPW){
+        this.setState({inputedPW});
     },
     render() {
         //console.log('render has been executed.');
