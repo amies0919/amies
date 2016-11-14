@@ -1,4 +1,3 @@
-'use strict'
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -14,25 +13,49 @@ let totalWidth = Dimensions.get('window').width;
 let totalHeight = Dimensions.get('window').height;
 let leftStartPoint = totalWidth*0.1;
 let componentWidth = totalWidth*0.8;
-export default class amies extends Component {       
+let amies =  React.createClass ({ 
+    getInitialState: function(){
+        return {
+            inputedNum:'',
+            inputedPW:''
+        };       
+    },
+    updateNum: function(newText){
+        this.setState(
+        (state)=>{
+            return {
+                inputedNum:newText,
+            }
+        }
+        );
+    },
+    updatePW: function(newText){
+        this.setState(
+            ()=>{
+                return{
+                inputedPW:newText,
+                }
+            }
+        );
+    },
     render() {
-        console.log('render has been executed.');
-        console.log('leftStartPoint is:' + leftStartPoint);
-        console.log('componentWidth is :' + componentWidth);
+        //console.log('render has been executed.');
+        //console.log('leftStartPoint is:' + leftStartPoint);
+        //console.log('componentWidth is :' + componentWidth);
         return (
             <View style={styles.container}>
-                <TextInput style={styles.numberInputStyle} placeholder={'请输入手机号'} />
+                <TextInput onChangeText = {(newText)=>this.updateNum(newText)} style={styles.numberInputStyle} placeholder={'请输入手机号'} />
                 <Text style={styles.textPromptStyle}>
-                    您输入的手机号:
+                    您输入的手机号:{this.state.inputedNum}
                 </Text>
-                <TextInput style={styles.passwordInputStyle} placeholder={'请输入密码'} />
+                <TextInput onChangeText = {(newText)=>this.updatePW(newText)} style={styles.passwordInputStyle} placeholder={'请输入密码'} />
                 <Text style={styles.bigTextPrompt}>
                 确定         
                 </Text>
             </View>
         );
     }
-}
+});
 
 const styles = StyleSheet.create({
     container: {
