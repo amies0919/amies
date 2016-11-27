@@ -57,21 +57,26 @@ let amies =  React.createClass ({
             uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
         };
         return (
-            <View style={styles.container}>
-                <TextInput onChangeText = {this.updateNum} style={styles.numberInputStyle} placeholder={'请输入手机号'} />
-                <Text style={styles.textPromptStyle}>
-                    您输入的手机号:{this.state.inputedNum}
-                </Text>
-                <TextInput onChangeText = {this.updatePW} style={styles.passwordInputStyle} placeholder={'请输入密码'} />
-                <Text style={styles.bigTextPrompt}>
-                确定         
-                </Text>
-                <Text style={styles.bigTextPrompts}>欢迎注册!</Text>
-                <Image source={pic} style={{marginTop:70,left:50,width: 193, height:110}} />
-                <Greeting  name='amies' />
-                <Blink text='I love to blink' />
-                <Blink text='Yes blinking is so great' />
-            </View>
+           // <View style={styles.container}>
+           //     <TextInput onChangeText = {this.updateNum} style={styles.numberInputStyle} placeholder={'请输入手机号'} />
+           //     <Text style={styles.textPromptStyle}>
+           //         您输入的手机号:{this.state.inputedNum}
+           //     </Text>
+           //     <TextInput onChangeText = {this.updatePW} style={styles.passwordInputStyle} placeholder={'请输入密码'} />
+           //     <Text style={styles.bigTextPrompt}>
+           //     确定         
+           //     </Text>
+           //     <Text style={styles.bigTextPrompts}>欢迎注册!</Text>
+           //     <Image source={pic} style={{marginTop:70,left:50,width: 193, height:110}} />
+           //     <Greeting  name='amies' />
+           //     <Blink text='I love to blink' />
+           //     <Blink text='Yes blinking is so great' />
+           // </View>
+           <View style={{flex:1,flexDirection:'column'}}>
+                <View style={{flex:1,width:50,height:50,backgroundColor:'red'}} />
+                <View style={{flex:1,width:50,height:50,backgroundColor:'yellow'}} />
+                <View style={{flex:1,width:50,height:50,backgroundColor:'black'}} />
+           </View>
         );
     }
 });
