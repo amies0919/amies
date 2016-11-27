@@ -4,7 +4,8 @@ import {
   StyleSheet,
   Text,
   View,
-  TextInput
+  TextInput,
+  Image
 } from 'react-native';
 let PixelRatio = require('PixelRatio');
 let pixelRatio = PixelRatio.get();
@@ -13,6 +14,13 @@ let totalWidth = Dimensions.get('window').width;
 let totalHeight = Dimensions.get('window').height;
 let leftStartPoint = totalWidth*0.1;
 let componentWidth = totalWidth*0.8;
+class Greeting extends Component{
+    render(){
+        return (
+            <Text style={{left:50}}>Hello {this.props.name}!</Text>
+        );
+    }
+}
 let amies =  React.createClass ({ 
     getInitialState: function(){
         return {
@@ -30,6 +38,9 @@ let amies =  React.createClass ({
         //console.log('render has been executed.');
         //console.log('leftStartPoint is:' + leftStartPoint);
         //console.log('componentWidth is :' + componentWidth);
+        let pic = {
+            uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
+        };
         return (
             <View style={styles.container}>
                 <TextInput onChangeText = {this.updateNum} style={styles.numberInputStyle} placeholder={'请输入手机号'} />
@@ -40,6 +51,9 @@ let amies =  React.createClass ({
                 <Text style={styles.bigTextPrompt}>
                 确定         
                 </Text>
+                <Text style={styles.bigTextPrompts}>欢迎注册!</Text>
+                <Image source={pic} style={{marginTop:70,left:50,width: 193, height:110}} />
+                <Greeting  name='amies' />
             </View>
         );
     }
@@ -80,6 +94,11 @@ const styles = StyleSheet.create({
         color: 'white',
         textAlign: 'center',
         fontSize: 60
+    },
+    bigTextPrompts: {
+        top:70,
+        left: leftStartPoint,
+        width: componentWidth
     }
 });
 
