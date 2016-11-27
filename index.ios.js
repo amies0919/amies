@@ -72,10 +72,10 @@ let amies =  React.createClass ({
            //     <Blink text='I love to blink' />
            //     <Blink text='Yes blinking is so great' />
            // </View>
-           <View style={{flex:1,flexDirection:'column'}}>
-                <View style={{flex:1,width:50,height:50,backgroundColor:'red'}} />
-                <View style={{flex:1,width:50,height:50,backgroundColor:'yellow'}} />
-                <View style={{flex:1,width:50,height:50,backgroundColor:'black'}} />
+           <View style={{flex:1,flexDirection:'column',justifyContent:'space-between'}}>
+                <View style={{width:50,height:50,backgroundColor:'red'}} />
+                <View style={{width:50,height:50,backgroundColor:'yellow'}} />
+                <View style={{width:50,height:50,backgroundColor:'black'}} />
            </View>
         );
     }
