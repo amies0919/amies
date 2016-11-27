@@ -21,6 +21,21 @@ class Greeting extends Component{
         );
     }
 }
+class Blink extends Component {
+    constructor(props){
+        super(props);
+        this.state = {showText:true};
+        setInterval(()=>{
+            this.setState({showText:!this.state.showText});
+        },1000);
+    }
+    render(){
+        let display = this.state.showText? this.props.text:'';
+        return(
+            <Text>{display}</Text>
+        );
+    }
+}
 let amies =  React.createClass ({ 
     getInitialState: function(){
         return {
@@ -54,6 +69,8 @@ let amies =  React.createClass ({
                 <Text style={styles.bigTextPrompts}>欢迎注册!</Text>
                 <Image source={pic} style={{marginTop:70,left:50,width: 193, height:110}} />
                 <Greeting  name='amies' />
+                <Blink text='I love to blink' />
+                <Blink text='Yes blinking is so great' />
             </View>
         );
     }
