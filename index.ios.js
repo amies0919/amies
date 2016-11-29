@@ -6,7 +6,8 @@ import {
   View,
   TextInput,
   Image,
-  ScrollView
+  ScrollView,
+  ListView
 } from 'react-native';
 let PixelRatio = require('PixelRatio');
 let pixelRatio = PixelRatio.get();
@@ -37,52 +38,27 @@ class Blink extends Component {
         );
     }
 }
-let amies =  React.createClass ({ 
-    getInitialState: function(){
-        return {
-            inputedNum:'',
-            inputedPW:''
-        };       
-    },
-    updateNum: function(inputedNum){
-        this.setState({inputedNum});
-    },
-    updatePW: function(inputedPW){
-        this.setState({inputedPW});
-    },
-    render() {
-        //console.log('render has been executed.');
-        //console.log('leftStartPoint is:' + leftStartPoint);
-        //console.log('componentWidth is :' + componentWidth);
-        let pic = {
-            uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
+class amies extends Component {
+    constructor(props){
+        super(props);
+        const ds = new ListView.DataSource({rowHasChanged:(r1,r2) => r1 !== r2});
+        this.state = {
+            dataSource: ds.cloneWithRows([
+                'John','Joel','James','Jimmy','Jackson','Jillian','Julie','Devin'  
+            ])
         };
+    }
+    render() {
+        fetch('https://facebook.github.io/react-native/movies.json').then((response) =>response.json()).then((responseJson) =>{
+            console.log(responseJson);
+        }).catch((error)=>{console.error(error)});
         return (
-           // <View style={styles.container}>
-           //     <TextInput onChangeText = {this.updateNum} style={styles.numberInputStyle} placeholder={'请输入手机号'} />
-           //     <Text style={styles.textPromptStyle}>
-           //         您输入的手机号:{this.state.inputedNum}
-           //     </Text>
-           //     <TextInput onChangeText = {this.updatePW} style={styles.passwordInputStyle} placeholder={'请输入密码'} />
-           //     <Text style={styles.bigTextPrompt}>
-           //     确定         
-           //     </Text>
-           //     <Text style={styles.bigTextPrompts}>欢迎注册!</Text>
-           //     <Image source={pic} style={{marginTop:70,left:50,width: 193, height:110}} />
-           //     <Greeting  name='amies' />
-           //     <Blink text='I love to blink' />
-           //     <Blink text='Yes blinking is so great' />
-           // </View>
-           <ScrollView>
-                <Text style={{fontSize:96}}>Scroll  me plz</Text>
-                <Image style={{width:50,height:80}} source={pic} />
-                <Text>26666668888888999999999999666666888888899999999999966666688888889999999999996666668888888999999999999666666888888899999999999922222222</Text>
-                <Text style={{fontSize:96}}>68888888888666666</Text>
-                <Image style={{width:50,height:80}} source={pic} />
-           </ScrollView>
+            <View style={{flex: 1, paddingTop: 22}}>
+                <ListView dataSource={this.state.dataSource} renderRow={(rowData) => <Text>{rowData}</Text>} />
+            </View>
         );
     }
-});
+};
 
 const styles = StyleSheet.create({
     container: {
