@@ -9,6 +9,7 @@ import {
   ScrollView,
   ListView
 } from 'react-native';
+import MyScene from './MyScene';
 let PixelRatio = require('PixelRatio');
 let pixelRatio = PixelRatio.get();
 let Dimensions = require('Dimensions');
@@ -55,6 +56,7 @@ class amies extends Component {
         return (
             <View style={{flex: 1, paddingTop: 22}}>
                 <ListView dataSource={this.state.dataSource} renderRow={(rowData) => <Text>{rowData}</Text>} />
+                <MyScene />
             </View>
         );
     }
