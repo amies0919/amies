@@ -7,7 +7,8 @@ import {
   TextInput,
   Image,
   ScrollView,
-  ListView
+  ListView,
+  Navigator
 } from 'react-native';
 import MyScene from './MyScene';
 let PixelRatio = require('PixelRatio');
@@ -54,10 +55,20 @@ class amies extends Component {
             console.log(responseJson);
         }).catch((error)=>{console.error(error)});
         return (
-            <View style={{flex: 1, paddingTop: 22}}>
-                <ListView dataSource={this.state.dataSource} renderRow={(rowData) => <Text>{rowData}</Text>} />
-                <MyScene />
-            </View>
+            <Navigator initialRoute={{title: 'My Initial Scene',index:0}} renderScene = {
+                (route, navigator)=> 
+                <MyScene title={route.title} onForward={()=>{
+                    const nextIndex = route.index +1;
+                    navigator.push({
+                        title:'Scene' + nextIndex,
+                        index: nextIndex
+                    });
+                }} onBack={() =>{
+                    if(route.index>0){
+                        navigator.pop();
+                    }
+                }} />
+            }/>
         );
     }
 };
