@@ -5,7 +5,8 @@ import {
   Text,
   View,
   TextInput,
-  Image
+  Image,
+  ScrollView
 } from 'react-native';
 let PixelRatio = require('PixelRatio');
 let pixelRatio = PixelRatio.get();
@@ -72,11 +73,13 @@ let amies =  React.createClass ({
            //     <Blink text='I love to blink' />
            //     <Blink text='Yes blinking is so great' />
            // </View>
-           <View style={{flex:1,flexDirection:'column',justifyContent:'center',alignItems:'stretch'}}>
-                <View style={{height:50,backgroundColor:'red'}} />
-                <View style={{height:50,backgroundColor:'yellow'}} />
-                <View style={{height:50,backgroundColor:'black'}} />
-           </View>
+           <ScrollView>
+                <Text style={{fontSize:96}}>Scroll  me plz</Text>
+                <Image style={{width:50,height:80}} source={pic} />
+                <Text>26666668888888999999999999666666888888899999999999966666688888889999999999996666668888888999999999999666666888888899999999999922222222</Text>
+                <Text style={{fontSize:96}}>68888888888666666</Text>
+                <Image style={{width:50,height:80}} source={pic} />
+           </ScrollView>
         );
     }
 });
