@@ -68,12 +68,12 @@ class HomePage extends Component {
                 [styles.headerWrapper,
                 {opacity: this.state.fadeAnim}]
                 }>
-                    <Image source={{uri:'http://imga1.pic21.com/bizhi/140226/07916/s04.jpg'}}
+                    <Image source={{uri:'https://facebook.github.io/react/img/logo_og.png'}}
                            style={styles.image}
                            resizeMode={Image.resizeMode.cover}
                         />
                     <View style={styles.composerView}>
-                        <Text style={styles.author}>作者:slashhuang</Text>
+                        <Text style={styles.author}>图片：logo</Text>
                     </View>
                 </Animated.View>
                 <Animated.View style={styles.content}>
@@ -91,18 +91,18 @@ class HomePage extends Component {
                     <TouchableHighlight
                         {...this.touchConfigs}
                         style={styles.touchHighLight}
-                        onPress={this.jumpToWebWiew.bind(this,team,'使用谷歌搜索')}>
+                        onPress={this.jumpToWebWiew.bind(this,team,'使用百度搜索')}>
                         <Text style={styles.textHint}>
-                            使用谷歌搜索
+                            使用百度搜索
                         </Text>
                     </TouchableHighlight>
 
                     <TouchableHighlight
                         {...this.touchConfigs}
                         style={styles.touchHighLight}
-                        onPress={this.jumpToWebWiew.bind(this,slash,'使用百度搜索')}>
+                        onPress={this.jumpToWebWiew.bind(this,slash,'使用谷歌搜索')}>
                         <Text style={styles.textHint}>
-                            使用百度搜索
+                            使用谷歌搜索
                         </Text>
                     </TouchableHighlight>
 
