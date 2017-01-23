@@ -20,8 +20,6 @@ export default class DemoView extends Component {
                     IsBackText={true}
                     backName={`组件列表`}
                     backFunc={()=>{
-                            console.log(this)
-
                     this.props.navigator.pop()
                     }}
                     />

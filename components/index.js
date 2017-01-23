@@ -60,8 +60,8 @@ class HomePage extends Component {
      * @return {XML}
      */
     render() {
-       const slash = 'https://www.google.com.hk/';
-       const team ='https://www.baidu.com/';
+       const slash = 'https://reactnative.cn/docs/0.40/getting-started.html';
+       const team ='https://www.v2ex.com/p/7v9TEc53';
         return (
             <View style={styles.container}>
                 <Animated.View style={
@@ -87,22 +87,21 @@ class HomePage extends Component {
                     </Text>
                         <Text style={styles.dateAuthor}>简介</Text>
                     </View>
-
-                    <TouchableHighlight
+                         <TouchableHighlight
                         {...this.touchConfigs}
                         style={styles.touchHighLight}
-                        onPress={this.jumpToWebWiew.bind(this,team,'使用百度搜索')}>
+                        onPress={this.jumpToWebWiew.bind(this,slash,'官方文档')}>
                         <Text style={styles.textHint}>
-                            使用百度搜索
+                            RN中文官方文档
                         </Text>
                     </TouchableHighlight>
 
                     <TouchableHighlight
                         {...this.touchConfigs}
                         style={styles.touchHighLight}
-                        onPress={this.jumpToWebWiew.bind(this,slash,'使用谷歌搜索')}>
+                        onPress={this.jumpToWebWiew.bind(this,team,'v2exapi')}>
                         <Text style={styles.textHint}>
-                            使用谷歌搜索
+                            v2ex开发接口
                         </Text>
                     </TouchableHighlight>
 
