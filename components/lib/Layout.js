@@ -19,7 +19,7 @@ export default class LayoutExample extends Component{
     static PropTypes={
     };
     renderContent(){
-        var word = 'FE futureTeam in dianping.com';
+        var word = 'Test flex 布局  哈哈哈';
        return <Text style={layoutStyles.text}>{word.split('').reduce(function (pre,cur) {
            return pre+'\n'+word;
        },'')} </Text>
