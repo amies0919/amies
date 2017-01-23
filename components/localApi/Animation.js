@@ -110,7 +110,7 @@ class AnimationDemo extends Component {
                     translateX: this.state.fadeAnimText0.interpolate({
                     inputRange: [0, 1],
                     outputRange: [0, 40]})}]}}>
-                        <Text style={styles.footerText}>Supported by: future-team</Text>
+                        <Text style={styles.footerText}>动画</Text>
                     </Animated.View>
 
                     <Animated.View
@@ -121,7 +121,7 @@ class AnimationDemo extends Component {
                         translateX: this.state.fadeAnimText1.interpolate({
                         inputRange: [0, 1],
                         outputRange: [0, 40]})}]}}>
-                        <Text style={styles.footerText}>written by: slashHuang</Text>
+                        <Text style={styles.footerText}>修改下看效果</Text>
                     </Animated.View>
                 </View>
                 <Animated.View
