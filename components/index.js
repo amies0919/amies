@@ -12,7 +12,7 @@ import {
 //引入博客webview
 import Blog from './webview/blog.js';
 //引入自定义的IOS组件界面
-//import CustomComponents from './customComponents/demoList.js';
+import CustomComponents from './customComponents/demoList.js';
 
 class HomePage extends Component {
     constructor(props) {
@@ -50,8 +50,8 @@ class HomePage extends Component {
     }
     jumpToCustomItems(){
        this.props.navigator.push({
-           //component:CustomComponents,
-           //title:'查看自定义IOS组件'
+           component:CustomComponents,
+           title:'学习其他组件'
        })
 
     }
@@ -110,7 +110,7 @@ class HomePage extends Component {
                                         underlayColor={'#222'}//触摸操作，显示的底层颜色
                                         delayLongPress={1000}//延迟长按相应时间
                                         onPress={this.jumpToCustomItems.bind(this,team)}>
-                            <Text style={styles.textHint}>查看IOS组件</Text>
+                            <Text style={styles.textHint}>其他组件学习</Text>
                     </TouchableHighlight>
                 </Animated.View>
             </View>
