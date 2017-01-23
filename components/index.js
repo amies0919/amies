@@ -1,7 +1,4 @@
-/**
- * Created by slashhuang on 16/3/22.
- */
- import React, { Component } from 'react';
+import React, { Component } from 'react';
 import {
     View,
     StyleSheet,
@@ -13,7 +10,7 @@ import {
 } from 'react-native';
 
 //引入博客webview
-//import Blog from './webview/slashhuang.js';
+import Blog from './webview/blog.js';
 //引入自定义的IOS组件界面
 //import CustomComponents from './customComponents/demoList.js';
 
@@ -46,7 +43,7 @@ class HomePage extends Component {
          * @ TODO 改变navigation title颜色
          */
        this.props.navigator.push({
-            // component:Blog,
+            component:Blog,
             url:url,
             title:title
         })
@@ -63,8 +60,8 @@ class HomePage extends Component {
      * @return {XML}
      */
     render() {
-       const slash = 'http://slashhuang.github.io';
-       const team ='http://uedfamily.com';
+       const slash = 'https://www.google.com.hk/';
+       const team ='https://www.baidu.com/';
         return (
             <View style={styles.container}>
                 <Animated.View style={
@@ -88,32 +85,31 @@ class HomePage extends Component {
                              - 功能点包括WebView,TabBar,图片浏览,进度条,动画{'\n'}
                              - 可以在这个demo基础上进行二次开发
                     </Text>
-                        <Text style={styles.dateAuthor}>作者:slashhuang</Text>
+                        <Text style={styles.dateAuthor}>简介</Text>
                     </View>
 
                     <TouchableHighlight
                         {...this.touchConfigs}
                         style={styles.touchHighLight}
-                        onPress={this.jumpToWebWiew.bind(this,team,'future-team')}>
+                        onPress={this.jumpToWebWiew.bind(this,team,'使用谷歌搜索')}>
                         <Text style={styles.textHint}>
-                            查看future-team技术博客
+                            使用谷歌搜索
                         </Text>
                     </TouchableHighlight>
 
                     <TouchableHighlight
                         {...this.touchConfigs}
                         style={styles.touchHighLight}
-                        onPress={this.jumpToWebWiew.bind(this,slash,'黄先生的技术博客')}>
+                        onPress={this.jumpToWebWiew.bind(this,slash,'使用百度搜索')}>
                         <Text style={styles.textHint}>
-                            查看踩坑过程
+                            使用百度搜索
                         </Text>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.touchHighLight}
                                         underlayColor={'#222'}//触摸操作，显示的底层颜色
                                         delayLongPress={1000}//延迟长按相应时间
-                                        onPress={this.jumpToCustomItems.bind(this,team)}
-                        >
+                                        onPress={this.jumpToCustomItems.bind(this,team)}>
                             <Text style={styles.textHint}>查看IOS组件</Text>
                     </TouchableHighlight>
                 </Animated.View>

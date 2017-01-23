@@ -25,10 +25,6 @@ class amies extends Component {
           tintColor='#cccccc'
           barTintColor='#cccccc'
           initialRoute={{ name: 'indexPage', component: IndexPage }}
-          /**
-           * 切换界面方式,只能向前切换，不能向后切换
-           */
-
           configureScene={(route) => {
             let  gestureType = Navigator.SceneConfigs.HorizontalSwipeJump;
             gestureType.gestures.jumpForward=null;
@@ -39,7 +35,7 @@ class amies extends Component {
             return <Component {...route.params} {...route} navigator={navigator} />
           }}>
       </Navigator>
-    );
+    );lide
     }
 }
 AppRegistry.registerComponent('amies', () => amies);
